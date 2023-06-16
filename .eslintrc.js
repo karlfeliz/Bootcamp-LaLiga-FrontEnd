@@ -33,9 +33,10 @@ module.exports = {
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/consistent-type-imports": "off",
+    "react/react-in-jsx-scope": "off",
     "react/jsx-indent": [2, 2],
     "react/prop-types": "off",
-    "jsx-quotes": [2, "prefer double"],
-    "react/no-unescaped-entities": [2, 2],
+    "jsx-quotes": [2, "prefer-double"],
+    "react/no-unescaped-entities": "off",
   },
 };

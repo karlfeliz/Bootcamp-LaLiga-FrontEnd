@@ -51,7 +51,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 Development Branches:
 
-Main -Develop -Feature
+Main ->Develop ->Feature/home
 
 DEPENDENCIES INSTALLED:
 
