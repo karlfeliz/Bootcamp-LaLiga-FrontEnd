@@ -3,13 +3,14 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: "standard-with-typescript",
+  extends: ["plugin:react/recommended", "standard-with-typescript"],
   overrides: [],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
     project: ["./tsconfig.json"],
   },
+  plugins: ["react"],
   ignorePatterns: ["build/*"],
   rules: {
     "semi": "off",
