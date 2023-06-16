@@ -49,6 +49,10 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## DOCUMENTATION - PROJECT
 
+Development Branches:
+
+Main -Develop -Feature
+
 DEPENDENCIES INSTALLED:
 
     ESLint - npm init @eslint/config
