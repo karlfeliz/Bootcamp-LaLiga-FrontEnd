@@ -1,7 +1,6 @@
 import "./Header.scss";
-import { NavLink } from "react-router-dom";
 
-const Header = () => {
+const Header = (): JSX.Element => {
   return (
     <header className="header">
       <h1>| FOOTBALL MANAGER </h1>
