@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import "./App.css";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
+import "./App.css";
 
 function App() {
   return (
