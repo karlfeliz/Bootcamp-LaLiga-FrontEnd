@@ -1,0 +1,9 @@
+@import "../../../styles/variables.scss";
+
+.home-page {
+  background-image: url("../../assets/Home_banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  border-bottom: 20px solid $border-generic;
+}
