@@ -1,0 +1,22 @@
+@import "./variables.scss";
+
+.button-dark {
+  color: $font-color-light;
+  border: none;
+  border-radius: 50px;
+  background-color: $backgroud-generic;
+}
+
+.button-white {
+  color: $font-color-generic;
+  border: none;
+  background-color: $background-light;
+  border-radius: 50px;
+}
+
+.button-light {
+  color: $font-color-generic;
+  border: solid 1px $border-generic;
+  border-radius: 50px;
+  background-color: $background-light;
+}
