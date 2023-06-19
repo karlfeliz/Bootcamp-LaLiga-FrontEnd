@@ -74,4 +74,8 @@ const LoginPage = (): JSX.Element => {
           <button className="login-page__form btn" type="submit">REGISTRARSE</button>
         </form>
       </div>
+    </div>
+  );
+};
 
+export default LoginPage;
