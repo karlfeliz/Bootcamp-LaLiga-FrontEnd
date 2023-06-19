@@ -1,6 +1,7 @@
 import { useRef } from "react";
 // import Header from "../../components/Header/Header";
 import "./RegisterPage.scss";
+import Header from "../../components/Header/Header";
 // import { AuthContext } from "../../App";
 
 interface RegisterInfo {
@@ -55,30 +56,32 @@ const RegisterPage = (): JSX.Element => {
 
   return (
     <div className="register-page page">
-      {/* <Header></Header> */}
-      <div className="register-page__container">
-        <div>
-          <p className="register-page__welcome">BIENVENIDO</p>
-          <p className="register-page__title">SIGN IN</p>
-          <p className="register-page__subtitle">Introduce tus credenciales para acceder</p>
-          {/* <button>Log out</button> */}
+      <div>
+        <Header />
+        <div className="register-page__container">
+          <div>
+            <p className="register-page__welcome">BIENVENIDO</p>
+            <p className="register-page__title">SIGN IN</p>
+            <p className="register-page__subtitle">Introduce tus credenciales para acceder</p>
+            {/* <button>Log out</button> */}
+          </div>
+          <form onSubmit={submitForm} className="register-page__form">
+            <label className="register-page__label register-page__form--label" htmlFor="email">Email:</label>
+            <input className="register-page__input" ref={emailRef} type="text" id="email" />
+
+            <label className="register-page__label register-page__form--label" htmlFor="password">Password:</label>
+            <input className="register-page__input" ref={passwordRef} type="text" id="password" />
+
+            <label className="register-page__label register-page__form--label" htmlFor="password">Nombre</label>
+            <input className="register-page__input" ref={passwordRef} type="text" id="password" />
+
+            <label className="register-page__label register-page__form--label" htmlFor="password">Apellidos</label>
+            <input className="register-page__input" ref={passwordRef} type="text" id="password" />
+
+            <button className="register-page__form btn--green" type="submit">REGISTRARSE</button>
+            <button className="register-page__form btn" type="submit">INICIAR SESIÓN</button>
+          </form>
         </div>
-        <form onSubmit={submitForm} className="register-page__form">
-          <label className="register-page__label register-page__form--label" htmlFor="email">Email:</label>
-          <input className="register-page__input" ref={emailRef} type="text" id="email" />
-
-          <label className="register-page__label register-page__form--label" htmlFor="password">Password:</label>
-          <input className="register-page__input" ref={passwordRef} type="text" id="password" />
-
-          <label className="register-page__label register-page__form--label" htmlFor="password">Nombre</label>
-          <input className="register-page__input" ref={passwordRef} type="text" id="password" />
-
-          <label className="register-page__label register-page__form--label" htmlFor="password">Apellidos</label>
-          <input className="register-page__input" ref={passwordRef} type="text" id="password" />
-
-          <button className="register-page__form btn--green" type="submit">ACCEDER</button>
-          <button className="register-page__form btn" type="submit">REGISTRARSE</button>
-        </form>
       </div>
     </div>
   );

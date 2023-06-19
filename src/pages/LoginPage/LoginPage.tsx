@@ -1,5 +1,5 @@
 import { useRef } from "react";
-// import Header from "../../components/Header/Header";
+import Header from "../../components/Header/Header";
 import "./LoginPage.scss";
 // import { AuthContext } from "../../App";
 
@@ -55,24 +55,26 @@ const LoginPage = (): JSX.Element => {
 
   return (
     <div className="login-page page">
-      {/* <Header></Header> */}
-      <div className="login-page__container">
-        <div>
-          <p className="login-page__welcome">BIENVENIDO</p>
-          <p className="login-page__title">SIGN IN</p>
-          <p className="login-page__subtitle">Introduce tus credenciales para acceder</p>
-          {/* <button>Log out</button> */}
+      <div>
+        <Header />
+        <div className="login-page__container">
+          <div>
+            <p className="login-page__welcome">BIENVENIDO</p>
+            <p className="login-page__title">SIGN IN</p>
+            <p className="login-page__subtitle">Introduce tus credenciales para acceder</p>
+            {/* <button>Log out</button> */}
+          </div>
+          <form onSubmit={submitForm} className="login-page__form">
+            <label className="login-page__label login-page__form--label" htmlFor="email">Email:</label>
+            <input className="login-page__input" ref={emailRef} type="text" id="email" />
+
+            <label className="login-page__label login-page__form--label" htmlFor="password">Password:</label>
+            <input className="login-page__input" ref={passwordRef} type="text" id="password" />
+
+            <button className="login-page__form btn--green" type="submit">ACCEDER</button>
+            <button className="login-page__form btn" type="submit">REGISTRARSE</button>
+          </form>
         </div>
-        <form onSubmit={submitForm} className="login-page__form">
-          <label className="login-page__label login-page__form--label" htmlFor="email">Email:</label>
-          <input className="login-page__input" ref={emailRef} type="text" id="email" />
-
-          <label className="login-page__label login-page__form--label" htmlFor="password">Password:</label>
-          <input className="login-page__input" ref={passwordRef} type="text" id="password" />
-
-          <button className="login-page__form btn--green" type="submit">ACCEDER</button>
-          <button className="login-page__form btn" type="submit">REGISTRARSE</button>
-        </form>
       </div>
     </div>
   );
