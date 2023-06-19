@@ -7,3 +7,55 @@
   height: 500px;
   border-bottom: 20px solid $border-generic;
 }
+
+.info-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 300px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: $background-container;
+  border-radius: 16px;
+  min-width: 500px;
+  max-width: 750px;
+  min-height: 600px;
+  padding: 20px;
+
+  &__header {
+    width: 460px;
+    border-radius: 10px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: $background-generic-dark;
+    color: $font-light;
+    height: 48px;
+    border-radius: 10px;
+    margin-bottom: 0;
+  }
+
+  &__columns {
+    display: flex;
+    justify-content: space-around;
+    background-color: $background-generic-light;
+    border-radius: 0 0 10px 10px;
+    gap: 100px;
+
+    &-headers {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+}
