@@ -80,8 +80,4 @@ const RegisterPage = (): JSX.Element => {
           <button className="register-page__form btn" type="submit">REGISTRARSE</button>
         </form>
       </div>
-    </div>
-  );
-};
 
-export default RegisterPage;
