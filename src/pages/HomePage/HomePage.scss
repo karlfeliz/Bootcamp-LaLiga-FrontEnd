@@ -16,8 +16,8 @@
 
 .card {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   background-color: $background-container;
   border-radius: 16px;
   min-width: 500px;
@@ -41,20 +41,40 @@
     color: $font-light;
     height: 48px;
     border-radius: 10px;
-    margin-bottom: 0;
+    margin: auto;
   }
 
   &__columns {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background-color: $background-generic-light;
     border-radius: 0 0 10px 10px;
     gap: 100px;
+    margin-top: -10px;
+    height: 48px;
 
-    &-headers {
+    &-left {
+      display: flex;
+      justify-content: flex-start;
+      gap: 30px;
+      width: 50%;
+      font-size: 14px;
+
+      &__pos {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin: 0;
+      }
+    }
+    &-right {
       display: flex;
       justify-content: space-around;
-      width: 100%;
+      width: 50%;
       font-size: 14px;
     }
   }
