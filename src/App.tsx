@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { HashRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+// Page Imports
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
-import "./App.css";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import DeputyPage from "./pages/PersonalArea/Deputy/Deputy";
 

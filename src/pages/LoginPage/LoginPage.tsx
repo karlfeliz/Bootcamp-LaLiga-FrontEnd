@@ -9,8 +9,8 @@ interface LoginInfo {
 }
 
 const LoginPage = (): JSX.Element => {
-//   const API_URL_LOGIN = `${process.env.REACT_APP_API_URL as string}/user/login`;
-//   const authInfo = useContext(AuthContext);
+  //   const API_URL_LOGIN = `${process.env.REACT_APP_API_URL as string}/user/login`;
+  //   const authInfo = useContext(AuthContext);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
 
@@ -25,7 +25,7 @@ const LoginPage = (): JSX.Element => {
     if (!loginInfo.email || !loginInfo.password) {
       alert("Email y la contraseña son obligatorios!");
     } else {
-    //   doLoginRequest(loginInfo);
+      //   doLoginRequest(loginInfo);
     }
   };
 
@@ -54,9 +54,9 @@ const LoginPage = (): JSX.Element => {
   //   };
 
   return (
-    <div className="login-page page">
+    <div className="login-page">
+      <Header />
       <div>
-        <Header />
         <div className="login-page__container">
           <div>
             <p className="login-page__welcome">BIENVENIDO</p>
@@ -65,14 +65,22 @@ const LoginPage = (): JSX.Element => {
             {/* <button>Log out</button> */}
           </div>
           <form onSubmit={submitForm} className="login-page__form">
-            <label className="login-page__label login-page__form--label" htmlFor="email">Email:</label>
+            <label className="login-page__label login-page__form--label" htmlFor="email">
+              Email:
+            </label>
             <input className="login-page__input" ref={emailRef} type="text" id="email" />
 
-            <label className="login-page__label login-page__form--label" htmlFor="password">Password:</label>
+            <label className="login-page__label login-page__form--label" htmlFor="password">
+              Password:
+            </label>
             <input className="login-page__input" ref={passwordRef} type="text" id="password" />
 
-            <button className="login-page__form btn--green" type="submit">ACCEDER</button>
-            <button className="login-page__form btn" type="submit">REGISTRARSE</button>
+            <button className="login-page__form btn--green" type="submit">
+              ACCEDER
+            </button>
+            <button className="login-page__form btn" type="submit">
+              REGISTRARSE
+            </button>
           </form>
         </div>
       </div>

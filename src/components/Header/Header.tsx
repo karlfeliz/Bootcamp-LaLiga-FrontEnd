@@ -1,10 +1,15 @@
 import "./Header.scss";
+import { NavLink } from "react-router-dom";
 
 const Header = (): JSX.Element => {
   return (
     <header className="header">
-      <h1 className="header__title">| FOOTBALL MANAGER </h1>
-      <button className="header__login">LOGIN / REGISTRO</button>
+      <NavLink to="/" className="header__title">
+        <h1 className="header__title-text">| FOOTBALL MANAGER </h1>
+      </NavLink>
+      <NavLink to="/login">
+        <button className="header__login">LOGIN / REGISTRO</button>
+      </NavLink>
     </header>
   );
 };
