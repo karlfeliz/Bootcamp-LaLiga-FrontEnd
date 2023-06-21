@@ -1,4 +1,4 @@
-@import "../../../styles/variables.scss";
+@import "../../styles/variables.scss";
 
 .header {
   display: flex;
@@ -7,7 +7,7 @@
   width: 100%;
 
   &__title {
-    color: $font-dark;
+    color: $font-generic-black;
     text-decoration: none;
     margin: 0 20px;
     &-text {
@@ -27,7 +27,7 @@
 
   &__login:hover {
     cursor: pointer;
-    background-color: $background-generic-dark;
-    color: $font-light;
+    background-color: $background-generic-black;
+    color: $font-generic-white;
   }
 }

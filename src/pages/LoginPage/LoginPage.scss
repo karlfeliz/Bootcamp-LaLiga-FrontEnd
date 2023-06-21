@@ -1,7 +1,7 @@
 @import "../../styles/buttons.scss";
 @import "../../styles/variables.scss";
 .login-page {
-  background-color: $background-login;
+  background-color: $background-page;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +10,7 @@
 
   &__container {
     padding: 20px;
-    background-color: $background-white;
+    background-color: $background-generic-white;
     border: 2px solid $font-gray-light;
     border-radius: 25px;
     display: flex;
@@ -23,8 +23,8 @@
   &__welcome {
     font-size: 38px;
     font-weight: 900;
-    color: $font-generic-dark;
-    border-left: 6px solid $backgroubd-dark-green;
+    color: $font-generic-black;
+    border-left: 6px solid $background-dark-green;
   }
   &__title {
     font-size: 27px;
