@@ -2,7 +2,7 @@
 
 .stats-card {
   display: flex;
-  background-color: $background-generic-light;
+  background-color: $background-generic-white;
   width: 460px;
   height: 48px;
   border-radius: 10px;
@@ -16,8 +16,8 @@
     font-size: 14px;
 
     &-number {
-      background-color: $background-generic-dark;
-      color: $font-light;
+      background-color: $background-generic-black;
+      color: $font-generic-white;
       width: 48px;
       height: 48px;
       display: flex;

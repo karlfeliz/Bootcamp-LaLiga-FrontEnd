@@ -1,7 +1,8 @@
 import React from "react";
 import "./HomePage.scss";
 import Header from "../../components/Header/Header";
-import TeamStats from "../../components/TeamStats/TeamStats";
+import TeamStats from "./TeamStats/TeamStats";
+import Matchups from "./Matchups/Matchups";
 
 const HomePage = (): JSX.Element => {
   return (
@@ -24,6 +25,18 @@ const HomePage = (): JSX.Element => {
             </div>
           </div>
           <TeamStats />
+        </div>
+        <div className="card">
+          <div className="card__header">
+            <h1 className="card__title">PARTIDOS</h1>
+
+            <div className="card__matchup">
+              <p>Prev</p>
+              <p className="card__matchup-title">JORNADA 1</p>
+              <p>Next</p>
+            </div>
+          </div>
+          <Matchups />
         </div>
       </div>
     </div>
