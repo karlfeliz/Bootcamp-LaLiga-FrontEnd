@@ -1,7 +1,7 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import Header from "../../components/Header/Header";
 import "./LoginPage.scss";
-// import { AuthContext } from "../../App";
+import { AuthContext } from "../../App";
 
 interface LoginInfo {
   email: string;
@@ -9,8 +9,8 @@ interface LoginInfo {
 }
 
 const LoginPage = (): JSX.Element => {
-  //   const API_URL_LOGIN = `${process.env.REACT_APP_API_URL as string}/user/login`;
-  //   const authInfo = useContext(AuthContext);
+  const API_URL_LOGIN = `${process.env.REACT_APP_API_URL as string}/user/login`;
+  const authInfo = useContext(AuthContext);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
 
@@ -25,33 +25,33 @@ const LoginPage = (): JSX.Element => {
     if (!loginInfo.email || !loginInfo.password) {
       alert("Email y la contraseña son obligatorios!");
     } else {
-      //   doLoginRequest(loginInfo);
+      doLoginRequest(loginInfo);
     }
   };
 
-  //   const doLoginRequest = (loginInfo: LoginInfo): void => {
-  //     fetch(API_URL_LOGIN, {
-  //       method: "POST",
-  //       body: JSON.stringify(loginInfo),
-  //       headers: { "Content-type": "application/json; charset=UTF-8" },
-  //     })
-  //       .then(async (response) => {
-  //         if (response.status !== 200) {
-  //           alert("Login incorrecto");
-  //         }
-  //         return await response.json();
-  //       })
-  //       .then((data) => {
-  //         // Login OK -> Guardamos las credenciales
-  //         if (data.token && data.user && authInfo.login) {
-  //           authInfo.login(data.token, data.user);
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         console.error(error);
-  //         alert("Ha ocurrido un error en la petición");
-  //       });
-  //   };
+  const doLoginRequest = (loginInfo: LoginInfo): void => {
+    fetch(API_URL_LOGIN, {
+      method: "POST",
+      body: JSON.stringify(loginInfo),
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    })
+      .then(async (response) => {
+        if (response.status !== 200) {
+          alert("Login incorrecto");
+        }
+        return await response.json();
+      })
+      .then((data) => {
+        // Login OK -> Guardamos las credenciales
+        if (data.token && data.user && authInfo.login) {
+          authInfo.login(data.token, data.user);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Ha ocurrido un error en la petición");
+      });
+  };
 
   return (
     <div className="login-page">
