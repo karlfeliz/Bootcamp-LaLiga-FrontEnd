@@ -1,19 +1,22 @@
 import Header from "../../../components/Header/Header";
-import LongMatch from "../../../components/LongMatch/LongMatch";
-import MyTeam from "../../../components/MyTeam/MyTeam";
 import ProfileInfo from "../../../components/ProfileInfo/ProfileInfo";
+import AdminUserPage from "./Users/AdminUserPage";
 
 const AdminPage = (): JSX.Element => {
   return (
-    <div className="player-page">
+    <div className="admin-page">
       <Header />
       <div className="player-page__layout">
         <div className="player-page__profile-info">
           <ProfileInfo />
         </div>
         <div className="player-page__content">
-          <MyTeam />
-          <LongMatch />
+          <div className="admin-page__nav">
+            <button>USUARIOS</button>
+            <button>EQUIPOS</button>
+            <button>LIGA</button>
+          </div>
+          <AdminUserPage />
         </div>
       </div>
     </div>
