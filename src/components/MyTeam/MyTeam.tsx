@@ -1,7 +1,12 @@
 import "./MyTeam.scss";
 import HomeBanner from "../../assets/Home_banner.png";
+// import useFetch from "../../hooks/useFetch";
+
+// const API_URL_TEAM = `${process.env.REACT_APP_API_URL as string}/user/team`;
 
 const MyTeam = (): JSX.Element => {
+  // const [playersData] = useFetch(API_URL_TEAM);
+
   return (
     <div className="my-team__team">
       <h3 className="my-team__content-title">MI EQUIPO</h3>

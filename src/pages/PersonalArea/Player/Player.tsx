@@ -3,6 +3,9 @@ import MyTeam from "../../../components/MyTeam/MyTeam";
 import "./Player.scss";
 import ProfileInfo from "../../../components/ProfileInfo/ProfileInfo";
 import LongMatch from "../../../components/LongMatch/LongMatch";
+// import useFetch from "../../../hooks/useFetch";
+
+// const API_URL = `${process.env.REACT_APP_API_URL as string}/user`;
 
 const PlayerPage = (): JSX.Element => {
   return (
@@ -13,7 +16,8 @@ const PlayerPage = (): JSX.Element => {
           <ProfileInfo />
         </div>
         <div className="player-page__content">
-          <MyTeam />
+          {/* {console.log(playersData)} */}
+          {<MyTeam />}
           <LongMatch />
         </div>
       </div>
