@@ -1,7 +1,11 @@
 import "./AdminUserPage.scss";
 import Avatar_user1 from "../../../../assets/Avatar_user1.jpg";
+import useFetch from "../../../../hooks/useFetch";
 
 const AdminUserPage = (): JSX.Element => {
+  const prueba = useFetch(`${process.env.REACT_APP_API_URL as string}/user`);
+  console.log(prueba);
+
   return (
     <div className="admin-user">
       <h3 className="admin-user__content-title">MI EQUIPO</h3>

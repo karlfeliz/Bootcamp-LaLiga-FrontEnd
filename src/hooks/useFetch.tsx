@@ -9,7 +9,9 @@ const useFetch = (apiUrl: any) => {
     if (apiUrl) {
       fetch(apiUrl)
         .then(async (data) => await data.json())
-        .then((dataParsed) => { setResult(dataParsed); });
+        .then((dataParsed) => {
+          setResult(dataParsed);
+        });
     }
   }, [apiUrl]);
 
