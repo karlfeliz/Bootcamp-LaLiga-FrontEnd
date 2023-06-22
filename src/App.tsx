@@ -8,6 +8,7 @@ import DeputyPage from "./pages/PersonalArea/Deputy/Deputy";
 import PlayerPage from "./pages/PersonalArea/Player/Player";
 import { UserResponse } from "./models/User";
 import { createContext, useState } from "react";
+import AdminPage from "./pages/PersonalArea/ADMIN/ADMIN";
 
 interface AuthContextInfo {
   userInfo?: UserResponse;
@@ -25,12 +26,12 @@ const App = (): JSX.Element => {
   const login = (userTokenFromApi: string, userInfoFromApi: UserResponse): void => {
     setUserToken(userTokenFromApi);
     setUserInfo(userInfoFromApi);
-  }
+  };
 
   const logout = (): void => {
     setUserToken(undefined);
     setUserInfo(undefined);
-  }
+  };
 
   return (
     <AuthContext.Provider value={{ userInfo, userToken, login, logout }}>
@@ -42,11 +43,12 @@ const App = (): JSX.Element => {
             <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
             <Route path="/personal-area/player" element={<PlayerPage></PlayerPage>}></Route>
             <Route path="/personal-area/deputy" element={<DeputyPage></DeputyPage>}></Route>
+            <Route path="/personal-area/admin" element={<AdminPage></AdminPage>}></Route>
           </Routes>
         </HashRouter>
       </div>
     </AuthContext.Provider>
   );
-}
+};
 
 export default App;
