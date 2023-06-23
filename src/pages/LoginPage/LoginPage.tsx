@@ -47,7 +47,7 @@ const LoginPage = (): JSX.Element => {
         // Login OK -> Guardamos las credenciales
         if (data.token && data.user && authInfo.login) {
           authInfo.login(data.token, data.user);
-          navigate("/personal-area/admin");
+          navigate("/personal-area/player");
         }
       })
       .catch((error) => {

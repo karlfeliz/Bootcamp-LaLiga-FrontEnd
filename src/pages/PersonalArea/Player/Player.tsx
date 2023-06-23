@@ -3,11 +3,17 @@ import MyTeam from "../../../components/MyTeam/MyTeam";
 import "./Player.scss";
 import ProfileInfo from "../../../components/ProfileInfo/ProfileInfo";
 import LongMatch from "../../../components/LongMatch/LongMatch";
+import { useContext } from "react";
+import { AuthContext } from "../../../App";
+import useFetch from "../../../hooks/useFetch";
 // import useFetch from "../../../hooks/useFetch";
 
-// const API_URL = `${process.env.REACT_APP_API_URL as string}/user`;
+const API_URL = `${process.env.REACT_APP_API_URL as string}/user`;
 
 const PlayerPage = (): JSX.Element => {
+  const authInfo = useContext(AuthContext);
+  console.log(authInfo.userToken);
+  const [players] = useFetch(API_URL, "GET", authInfo.userToken as string);
   return (
     <div className="player-page">
       <Header />
@@ -17,7 +23,7 @@ const PlayerPage = (): JSX.Element => {
         </div>
         <div className="player-page__content">
           {/* {console.log(playersData)} */}
-          {<MyTeam />}
+          <MyTeam players={players?.data?.teamUsers} />
           <LongMatch />
         </div>
       </div>

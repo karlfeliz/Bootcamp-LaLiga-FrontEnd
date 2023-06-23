@@ -1,12 +1,8 @@
 import "./MyTeam.scss";
-// import TeamRows from "./TeamRows/TeamRows";
+import TeamRows from "./TeamRows/TeamRows";
 // import useFetch from "../../hooks/useFetch";
 
-// const API_URL_TEAM = `${process.env.REACT_APP_API_URL as string}/user/team`;
-
-const MyTeam = (): JSX.Element => {
-  // const [playersData] = useFetch(API_URL_TEAM);
-
+const MyTeam = (props: any): JSX.Element => {
   // const deletePlayer = (value: string) => {
   //   const deletePlayer = {
   //     ...props.myTeam,
@@ -30,9 +26,9 @@ const MyTeam = (): JSX.Element => {
               <th className="my-team__table-head-out">SACAR DEL EQUIPO</th>
             </tr>
           </div>
-          {/* {props.myTeam.map((player) =>{
-            <TeamRows onClick={() => deletePlayer(player)}></TeamRows>
-          })} */}
+          {props.players?.map((player: any) => {
+            return <TeamRows key={player._id} player={player}></TeamRows>
+          })}
         </table>
       </div>
     </div>
