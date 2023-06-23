@@ -2,6 +2,7 @@ import { useContext, useRef } from "react";
 import Header from "../../components/Header/Header";
 import "./LoginPage.scss";
 import { AuthContext } from "../../App";
+import { useNavigate } from "react-router-dom"; // Import useHistory hook
 
 interface LoginInfo {
   email: string;
@@ -13,6 +14,7 @@ const LoginPage = (): JSX.Element => {
   const authInfo = useContext(AuthContext);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
 
   const submitForm = (event: React.FormEvent): void => {
     event.preventDefault();
@@ -45,6 +47,7 @@ const LoginPage = (): JSX.Element => {
         // Login OK -> Guardamos las credenciales
         if (data.token && data.user && authInfo.login) {
           authInfo.login(data.token, data.user);
+          navigate("/personal-area/admin");
         }
       })
       .catch((error) => {
