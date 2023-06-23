@@ -12,18 +12,18 @@
   &__btn-box {
     background-color: $background-light-green;
     border: none;
-    width: 1500px;
+    width: 1000px;
     height: 468px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 
     &--text {
-      font-size: 21px;
-      border: none;
+      font-size: 18px;
       border: solid 1px $border-generic;
       width: 200px;
-      height: 48px;
+      height: 32px;
       border-radius: 10px;
     }
     &--text:hover {
