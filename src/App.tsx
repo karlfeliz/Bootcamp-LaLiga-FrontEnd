@@ -8,7 +8,7 @@ import DeputyPage from "./pages/PersonalArea/Deputy/Deputy";
 import PlayerPage from "./pages/PersonalArea/Player/Player";
 import { UserResponse } from "./models/User";
 import { createContext, useState } from "react";
-import AdminPage from "./pages/PersonalArea/ADMIN/ADMIN";
+import Admin from "./pages/PersonalArea/Admin/Admin";
 
 interface AuthContextInfo {
   userInfo?: UserResponse;
@@ -43,7 +43,7 @@ const App = (): JSX.Element => {
             <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
             <Route path="/personal-area/player" element={<PlayerPage></PlayerPage>}></Route>
             <Route path="/personal-area/deputy" element={<DeputyPage></DeputyPage>}></Route>
-            <Route path="/personal-area/admin" element={<AdminPage></AdminPage>}></Route>
+            <Route path="/personal-area/admin" element={<Admin></Admin>}></Route>
           </Routes>
         </HashRouter>
       </div>

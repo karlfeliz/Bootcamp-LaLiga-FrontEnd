@@ -1,8 +1,9 @@
 import Header from "../../../components/Header/Header";
 import ProfileInfo from "../../../components/ProfileInfo/ProfileInfo";
 import AdminUserPage from "./Users/AdminUserPage";
+import "./Admin.scss";
 
-const AdminPage = (): JSX.Element => {
+const Admin = (): JSX.Element => {
   return (
     <div className="admin-page">
       <Header />
@@ -12,9 +13,9 @@ const AdminPage = (): JSX.Element => {
         </div>
         <div className="player-page__content">
           <div className="admin-page__nav">
-            <button>USUARIOS</button>
-            <button>EQUIPOS</button>
-            <button>LIGA</button>
+            <button className="admin-page__nav--btn">USUARIOS</button>
+            <button className="admin-page__nav--btn">EQUIPOS</button>
+            <button className="admin-page__nav--btn">LIGA</button>
           </div>
           <AdminUserPage />
         </div>
@@ -23,4 +24,4 @@ const AdminPage = (): JSX.Element => {
   );
 };
 
-export default AdminPage;
+export default Admin;
