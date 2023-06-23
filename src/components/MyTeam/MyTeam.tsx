@@ -1,5 +1,5 @@
 import "./MyTeam.scss";
-import HomeBanner from "../../assets/Home_banner.png";
+// import TeamRows from "./TeamRows/TeamRows";
 // import useFetch from "../../hooks/useFetch";
 
 // const API_URL_TEAM = `${process.env.REACT_APP_API_URL as string}/user/team`;
@@ -7,6 +7,14 @@ import HomeBanner from "../../assets/Home_banner.png";
 const MyTeam = (): JSX.Element => {
   // const [playersData] = useFetch(API_URL_TEAM);
 
+  // const deletePlayer = (value: string) => {
+  //   const deletePlayer = {
+  //     ...props.myTeam,
+  //     players: [...props.myTeam.players]
+  //   }
+  //   deletePlayer.players = deletePlayer.players.filter(player => player.firstName !== value.firstName)
+  //   props.onClickRemovePlayers(deletePlayer)
+  // }
   return (
     <div className="my-team__team">
       <h3 className="my-team__content-title">MI EQUIPO</h3>
@@ -22,16 +30,9 @@ const MyTeam = (): JSX.Element => {
               <th className="my-team__table-head-out">SACAR DEL EQUIPO</th>
             </tr>
           </div>
-          <div className="my-team__row-block">
-            <tr className="my-team__row-block-tr">
-              <td className="my-team__table-row-photo"><img className="my-team__table-row-photo-img" src={HomeBanner} /></td>
-              <td className="my-team__table-row-name">Karl Brandon</td>
-              <td className="my-team__table-row-lastname">Féliz Ramos</td>
-              <td className="my-team__table-row-email">karlbrandon@hotmail.com</td>
-              <td className="my-team__table-row-role">Delegado</td>
-              <td className="my-team__table-row-out"><button className="my-team__table-row-out--button">ELIMINAR</button></td>
-            </tr>
-          </div>
+          {/* {props.myTeam.map((player) =>{
+            <TeamRows onClick={() => deletePlayer(player)}></TeamRows>
+          })} */}
         </table>
       </div>
     </div>
