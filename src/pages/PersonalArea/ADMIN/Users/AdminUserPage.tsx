@@ -13,11 +13,10 @@ const AdminUserPage = (): JSX.Element => {
         <table>
           <div className="admin-user__row-block">
             <tr className="admin-user__row-block-tr">
-              <th className="admin-user__table-head-photo"></th>
-              <th className="admin-user__table-head-name">NOMBRE</th>
-              <th className="admin-user__table-head-lastname">APELLIDOS</th>
-              <th className="admin-user__table-head-email">EMAIL</th>
-              <th className="admin-user__table-head-role">ROL</th>
+              <th className="admin-user__table-head">NOMBRE</th>
+              <th className="admin-user__table-head">APELLIDOS</th>
+              <th className="admin-user__table-head">EMAIL</th>
+              <th className="admin-user__table-head">ROL</th>
             </tr>
           </div>
           <div className="admin-user__row-block">
@@ -25,11 +24,11 @@ const AdminUserPage = (): JSX.Element => {
               <td className="admin-user__table-row-photo">
                 <img className="admin-user__table-row-photo-img" src={Avatar_user1} />
               </td>
-              <td className="admin-user__table-row-name">Domingo</td>
-              <td className="admin-user__table-row-lastname">Diaz Festivo</td>
-              <td className="admin-user__table-row-email">ddiaz@gmail.com</td>
-              <td className="admin-user__table-row-role">Usuario</td>
-              <td className="admin-user__table-row-out">
+              <td className="admin-user__table-row">Borja</td>
+              <td className="admin-user__table-row">Mariano Diaz</td>
+              <td className="admin-user__table-row">bmdiaz@gmail.com</td>
+              <td className="admin-user__table-row">Usuario</td>
+              <td className="admin-user__table-row">
                 <button className="admin-user__table-row-out--button-edit">EDITAR</button>
                 <button className="admin-user__table-row-out--button-delete">ELIMINAR</button>
               </td>
