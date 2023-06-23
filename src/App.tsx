@@ -8,7 +8,7 @@ import DeputyPage from "./pages/PersonalArea/Deputy/Deputy";
 import PlayerPage from "./pages/PersonalArea/Player/Player";
 import { UserResponse } from "./models/User";
 import { createContext, useState } from "react";
-import Admin from "./pages/PersonalArea/Admin/Admin";
+import Admin from "./pages/PersonalArea/Admin/ADMIN";
 
 interface AuthContextInfo {
   userInfo?: UserResponse;
