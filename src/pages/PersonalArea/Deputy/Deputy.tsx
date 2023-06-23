@@ -5,16 +5,18 @@ import ProfileInfo from "../../../components/ProfileInfo/ProfileInfo";
 import ClubInfo from "../../../components/ClubInfo/ClubInfo";
 import FreePlayers from "../../../components/FreePlayers/FreePlayers";
 import LongMatch from "../../../components/LongMatch/LongMatch";
+import useFetch from "../../../hooks/useFetch";
 import { useContext } from "react";
 import { AuthContext } from "../../../App";
-import useFetch from "../../../hooks/useFetch"
 
+const API_URL_MATCH = `${process.env.REACT_APP_API_URL as string}/match`;
 const API_URL = `${process.env.REACT_APP_API_URL as string}/user`;
 const API_URL_CLUB = `${process.env.REACT_APP_API_URL as string}/team`;
 
 const DeputyPage = (): JSX.Element => {
   const authInfo = useContext(AuthContext);
   console.log(authInfo.userToken);
+  const [matches] = useFetch(API_URL_MATCH, "GET", authInfo.userToken as string);
   const [players] = useFetch(API_URL, "GET", authInfo.userToken as string);
   // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
   const club = useFetch(`${API_URL_CLUB}/${authInfo?.userInfo?.team}`, "GET", authInfo.userToken as string);
@@ -32,8 +34,8 @@ const DeputyPage = (): JSX.Element => {
         <div className="deputy-page__content">
           <MyTeam players={players?.data?.teamUsers} />
           <button className="deputy-page__add">AÑADIR JUGADORES</button>
+          <LongMatch matches={matches?.data}/>
           <FreePlayers players={players?.data?.freeUsers}/>
-          <LongMatch />
         </div>
       </div>
     </div>

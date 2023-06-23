@@ -1,0 +1,83 @@
+@import "../../../styles/variables.scss";
+
+.long-match {
+  &__team {
+    background-color: $background-light-green;
+    border-radius: 10px;
+    position: relative;
+    padding-top: 60px;
+    margin-top: 100px;
+  }
+  &__content-title {
+    background-color: $backgroubd-black;
+    color: $font-generic-white;
+    width: 460px;
+    padding: 18px;
+    border-radius: 10px;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+  }
+  &__row-block {
+    background-color: $background-white;
+    margin: 15px;
+    padding: 18px;
+    border-radius: 30px;
+    position: relative;
+  }
+  &__row-block-tr {
+    display: flex;
+    justify-content: space-evenly;
+    width: 1000px;
+    position: relative;
+  }
+  &__table-row-match-day {
+    position: absolute;
+    left: 5%;
+    top: -6px;
+    font-size: 14px;
+    font-weight: 900;
+    border-right: 3px solid $font-generic-dark;
+    padding-right: 5px;
+  }
+  &__table-row-date {
+    position: absolute;
+    left: 14%;
+    top: -6px;
+    font-size: 14px;
+    font-weight: 900;
+  }
+  &__table-row-short--1 {
+    position: absolute;
+    left: 35%;
+    top: -6px;
+    font-size: 14px;
+  }
+  &__logo--1 {
+    position: absolute;
+    left: 39%;
+    top: -17px;
+    font-size: 14px;
+  }
+  &__result {
+    position: absolute;
+    left: 46%;
+    top: -26px;
+    font-size: 14px;
+    background-color: #dcdcdc;
+    padding: 5px 50px 5px 50px;
+    border-radius: 5px;
+  }
+  &__logo--2 {
+    position: absolute;
+    left: 62%;
+    top: -17px;
+    font-size: 14px;
+  }
+  &__table-row-short--2 {
+    position: absolute;
+    left: 67%;
+    top: -6px;
+    font-size: 14px;
+  }
+}
