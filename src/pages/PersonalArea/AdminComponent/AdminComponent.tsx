@@ -25,9 +25,8 @@ const AdminComponent = (): JSX.Element => {
   return (
     <div className="admin-page">
       <Header />
-      <div className="player-page__layout">
-        <div className="player-page__profile-info">
-          <ProfileInfo />
+Expand All
+	@@ -13,11 +31,32 @@ const AdminComponent = (): JSX.Element => {
         </div>
         <div className="player-page__content">
           <div className="admin-page__nav">
@@ -60,7 +59,3 @@ const AdminComponent = (): JSX.Element => {
         </div>
       </div>
     </div>
-  );
-};
-
-export default AdminComponent;
