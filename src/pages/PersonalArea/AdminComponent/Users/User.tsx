@@ -1,4 +1,4 @@
-import "./AdminUserPage.scss";
+import "./User.scss";
 import Avatar_user1 from "../../../../assets/Avatar_user1.jpg";
 import useFetch from "../../../../hooks/useFetch";
 
@@ -8,7 +8,7 @@ const AdminUserPage = (): JSX.Element => {
 
   return (
     <div className="admin-user">
-      <h3 className="admin-user__content-title">MI EQUIPO</h3>
+      <h3 className="admin-user__content-title">USUARIOS</h3>
       <div className="admin-user__table">
         <table>
           <div className="admin-user__row-block">

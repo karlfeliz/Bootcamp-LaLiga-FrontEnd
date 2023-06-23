@@ -1,7 +1,7 @@
 import "./FreePlayers.scss";
-import HomeBanner from "../../assets/Home_banner.png";
+import FreePlayersRow from "./FreePlayersRow/FreePlayersRow";
 
-const FreePlayers = (): JSX.Element => {
+const FreePlayers = (props: any): JSX.Element => {
   return (
     <div className="free-players__team">
       <h3 className="free-players__content-title">SIN EQUIPO</h3>
@@ -17,16 +17,9 @@ const FreePlayers = (): JSX.Element => {
               <th className="free-players__table-head-out">AÑADIR AL EQUIPO</th>
             </tr>
           </div>
-          <div className="free-players__row-block">
-            <tr className="free-players__row-block-tr">
-              <td className="free-players__table-row-photo"><img className="free-players__table-row-photo-img" src={HomeBanner} /></td>
-              <td className="free-players__table-row-name">Karl Brandon</td>
-              <td className="free-players__table-row-lastname">Féliz Ramos</td>
-              <td className="free-players__table-row-email">karlbrandon@hotmail.com</td>
-              <td className="free-players__table-row-role">Delegado</td>
-              <td className="free-players__table-row-out"><button className="free-players__table-row-out--button">AÑADIR</button></td>
-            </tr>
-          </div>
+          {props.players?.map((player: any) => {
+            return <FreePlayersRow key={player._id} player={player}></FreePlayersRow>
+          })}
         </table>
       </div>
     </div>

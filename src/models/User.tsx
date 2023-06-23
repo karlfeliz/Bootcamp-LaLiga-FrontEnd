@@ -4,5 +4,5 @@ export interface UserResponse {
   password: string;
   firstName: string;
   lastName: string;
-  children: UserResponse[];
+  team: UserResponse[];
 }

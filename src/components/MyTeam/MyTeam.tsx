@@ -1,16 +1,8 @@
 import "./MyTeam.scss";
 import TeamRows from "./TeamRows/TeamRows";
-// import useFetch from "../../hooks/useFetch";
 
 const MyTeam = (props: any): JSX.Element => {
-  // const deletePlayer = (value: string) => {
-  //   const deletePlayer = {
-  //     ...props.myTeam,
-  //     players: [...props.myTeam.players]
-  //   }
-  //   deletePlayer.players = deletePlayer.players.filter(player => player.firstName !== value.firstName)
-  //   props.onClickRemovePlayers(deletePlayer)
-  // }
+  // const deletePlayer: any = useFetch(API_URL, "PUT", authInfo.userToken as string);
   return (
     <div className="my-team__team">
       <h3 className="my-team__content-title">MI EQUIPO</h3>
