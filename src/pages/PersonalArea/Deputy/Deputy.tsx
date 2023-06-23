@@ -10,14 +10,14 @@ import { useContext } from "react";
 import { AuthContext } from "../../../App";
 
 const API_URL_MATCH = `${process.env.REACT_APP_API_URL as string}/match`;
-const API_URL = `${process.env.REACT_APP_API_URL as string}/user`;
+const API_URL_USER = `${process.env.REACT_APP_API_URL as string}/user`;
 const API_URL_CLUB = `${process.env.REACT_APP_API_URL as string}/team`;
 
 const DeputyPage = (): JSX.Element => {
   const authInfo = useContext(AuthContext);
   console.log(authInfo.userToken);
   const [matches] = useFetch(API_URL_MATCH, "GET", authInfo.userToken as string);
-  const [players] = useFetch(API_URL, "GET", authInfo.userToken as string);
+  const [players] = useFetch(API_URL_USER, "GET", authInfo.userToken as string);
   // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
   const club = useFetch(`${API_URL_CLUB}/${authInfo?.userInfo?.team}`, "GET", authInfo.userToken as string);
   console.log("user info", authInfo?.userInfo?.team);
