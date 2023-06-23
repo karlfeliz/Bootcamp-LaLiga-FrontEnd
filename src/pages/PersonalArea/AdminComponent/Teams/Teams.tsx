@@ -7,23 +7,25 @@ const TeamsComponent = (): JSX.Element => {
       <table className="teams-page__table">
         <div className="teams-page__row-block">
           <tr className="teams-page__row-block-tr">
-            <th className="teams-page__table-head">NOMBRE</th>
-            <th className="teams-page__table-head">ALIAS</th>
-            <th className="teams-page__table-head">DELEGADO</th>
+            <th className="teams-page__row-block--avatar"></th>
+            <th className="teams-page__row-block--head">NOMBRE</th>
+            <th className="teams-page__row-block--head">ALIAS</th>
+            <th className="teams-page__row-block--head">DELEGADO</th>
+            <th className="teams-page__row-block--btn"></th>
           </tr>
         </div>
         <div className="teams-page__row-block">
           <tr className="teams-page__row-block-tr">
-            <td className="teams-page__table-row-photo">
-              <img className="teams-page__table-row-photo-img" src={Logo} />
+            <td className="teams-page__row-block--avatar">
+              <img className="teams-page__row-block--avatar-img" src={Logo} />
             </td>
-            <td className="teams-page__table-row">The Valley Club</td>
-            <td className="teams-page__table-row">TVC</td>
-            <td className="teams-page__table-row">Jorge Carlos Valle</td>
-            <td>
-              <button className="teams-page__table-row-out--button-jugadores">JUGADORES</button>
-              <button className="teams-page__table-row-out--button-edit">EDITAR</button>
-              <button className="teams-page__table-row-out--button-delete">ELIMINAR</button>
+            <td className="teams-page__row-block--head">The Valley Club</td>
+            <td className="teams-page__row-block--head">TVC</td>
+            <td className="teams-page__row-block--head">Jorge Carlos Valle</td>
+            <td className="teams-page__row-block--btn">
+              <button className="teams-page__row-block--btn-edit">JUGADORES</button>
+              <button className="teams-page__row-block--btn-edit">EDITAR</button>
+              <button className="teams-page__row-block--btn-delete">ELIMINAR</button>
             </td>
           </tr>
         </div>
