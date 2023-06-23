@@ -1,0 +1,17 @@
+@import "../../../../styles/variables.scss";
+
+.teams-page {
+  &__title {
+    background-color: $background-generic-black;
+    color: $font-generic-white;
+    width: 460px;
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  &__table {
+    background-color: $background-light-green;
+    border-radius: 20px;
+    width: 100%;
+  }
+}
