@@ -1,7 +1,7 @@
 import Header from "../../../components/Header/Header";
 import ProfileInfo from "../../../components/ProfileInfo/ProfileInfo";
-import AdminUserPage from "./Users/AdminUserPage";
 import "./Admin.scss";
+import AdminUserPage from "./Users/AdminUserPage";
 
 const Admin = (): JSX.Element => {
   return (
@@ -17,7 +17,7 @@ const Admin = (): JSX.Element => {
             <button className="admin-page__nav--btn">EQUIPOS</button>
             <button className="admin-page__nav--btn">LIGA</button>
           </div>
-          <AdminUserPage />
+          <AdminUserPage></AdminUserPage>
         </div>
       </div>
     </div>
