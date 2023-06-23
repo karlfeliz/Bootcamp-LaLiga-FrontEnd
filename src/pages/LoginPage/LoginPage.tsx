@@ -44,10 +44,10 @@ const LoginPage = (): JSX.Element => {
         return await response.json();
       })
       .then((data) => {
-        // Login OK -> Guardamos las credenciales
+        // Login OK -> redirige segun rol.
         if (data.token && data.user && authInfo.login) {
           authInfo.login(data.token, data.user);
-          navigate("/personal-area/player");
+          navigate(data.user.rol === "ADMIN" ? "/personal-area/admin" : data.user.rol === "MANAGER" ? "/personal-area/deputy" : "/personal-area/player");
         }
       })
       .catch((error) => {
