@@ -1,9 +1,9 @@
 import Header from "../../../components/Header/Header";
 import ProfileInfo from "../../../components/ProfileInfo/ProfileInfo";
-import "./Admin.scss";
+import "./AdminComponent.scss";
 import AdminUserPage from "./Users/AdminUserPage";
 
-const Admin = (): JSX.Element => {
+const AdminComponent = (): JSX.Element => {
   return (
     <div className="admin-page">
       <Header />
@@ -24,4 +24,4 @@ const Admin = (): JSX.Element => {
   );
 };
 
-export default Admin;
+export default AdminComponent;
