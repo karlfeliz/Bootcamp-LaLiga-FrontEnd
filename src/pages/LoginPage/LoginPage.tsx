@@ -14,6 +14,7 @@ const LoginPage = (): JSX.Element => {
   const authInfo = useContext(AuthContext);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+
   const navigate = useNavigate();
 
   const submitForm = (event: React.FormEvent): void => {
@@ -81,7 +82,13 @@ const LoginPage = (): JSX.Element => {
             <button className="login-page__form btn--green" type="submit">
               ACCEDER
             </button>
-            <button className="login-page__form btn" type="submit">
+            <button
+              className="login-page__form btn"
+              type="button"
+              onClick={() => {
+                navigate("/register");
+              }}
+            >
               REGISTRARSE
             </button>
           </form>
