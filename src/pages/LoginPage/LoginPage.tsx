@@ -53,7 +53,7 @@ const LoginPage = (): JSX.Element => {
           } else if (data.user.role === "manager") {
             navigate("/personal-area/manager");
           } else {
-            navigate("/personal-area/user");
+            navigate("/personal-area/player");
           }
         }
       })
