@@ -47,6 +47,9 @@ const LoginPage = (): JSX.Element => {
         // Login OK -> redirige segun rol.
         if (data.token && data.user && authInfo.login) {
           authInfo.login(data.token, data.user);
+<<<<<<< HEAD
+          navigate(data.user.rol === "ADMIN" ? "/personal-area/admin" : data.user.rol === "MANAGER" ? "/personal-area/deputy" : "/personal-area/player");
+=======
 
           if (data.user.role === "admin") {
             navigate("/personal-area/admin");
@@ -55,6 +58,7 @@ const LoginPage = (): JSX.Element => {
           } else {
             navigate("/personal-area/user");
           }
+>>>>>>> develop
         }
       })
       .catch((error) => {
