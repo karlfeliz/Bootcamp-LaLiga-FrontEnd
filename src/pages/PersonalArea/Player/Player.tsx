@@ -10,18 +10,21 @@ import useFetch from "../../../hooks/useFetch";
 
 const API_URL = `${process.env.REACT_APP_API_URL as string}/user`;
 const API_URL_MATCH = `${process.env.REACT_APP_API_URL as string}/match`;
+const API_URL_USER = `${process.env.REACT_APP_API_URL as string}/user`;
 
 const PlayerPage = (): JSX.Element => {
   const authInfo = useContext(AuthContext);
   console.log(authInfo.userToken);
   const [players] = useFetch(API_URL, "GET", authInfo.userToken as string);
   const [matches] = useFetch(API_URL_MATCH, "GET", authInfo.userToken as string);
+  const [player] = useFetch(`${API_URL_USER}/${authInfo.userInfo?._id as string}`, "GET", authInfo.userToken as string);
+
   return (
     <div className="player-page">
       <Header />
       <div className="player-page__layout">
         <div className="player-page__profile-info">
-          <ProfileInfo />
+          <ProfileInfo player={player} />
         </div>
         <div className="player-page__content">
           {/* {console.log(playersData)} */}
