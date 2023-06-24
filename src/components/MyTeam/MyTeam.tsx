@@ -2,7 +2,6 @@ import "./MyTeam.scss";
 import TeamRows from "./TeamRows/TeamRows";
 
 const MyTeam = (props: any): JSX.Element => {
-  // const deletePlayer: any = useFetch(API_URL, "PUT", authInfo.userToken as string);
   return (
     <div className="my-team__team">
       <h3 className="my-team__content-title">MI EQUIPO</h3>

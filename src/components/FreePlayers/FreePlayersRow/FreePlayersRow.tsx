@@ -1,9 +1,30 @@
+import { useContext } from "react";
+import { AuthContext } from "../../../App";
 import "./FreePlayersRow.scss"
 // import HomeBanner from "../../assets/Home_banner.png";
 
-// import useFetch from "../../hooks/useFetch";
+const API_URL = `${process.env.REACT_APP_API_URL as string}/user`;
 
 const FreePlayersRow = (props: any): JSX.Element => {
+  const authInfo = useContext(AuthContext);
+
+  const includePlayer = (player: string): void => {
+    const API_ADD = `${API_URL}/${player}`;
+
+    const headers: any = {
+      "Content-type": "application/json; charset=UTF-8",
+      "Authorization": authInfo.userToken,
+    };
+    fetch(API_ADD, {
+      method: "PUT",
+      //   body: JSON.stringify({ team: null }),
+      headers,
+    })
+      .then(async (data) => await data.json())
+      .then((dataParsed) => {
+        console.log("soy este", dataParsed)
+      }).catch((error) => { console.error(error) });
+  };
   return (
     <div className="my-team__row-block">
       <tr className="my-team__row-block-tr">
@@ -12,7 +33,7 @@ const FreePlayersRow = (props: any): JSX.Element => {
         <td className="my-team__table-row-lastname">{props.player.lastName}</td>
         <td className="my-team__table-row-email">{props.player.email}</td>
         <td className="my-team__table-row-role">{props.player.rol}</td>
-        <td className="my-team__table-row-out"><button className="my-team__table-row-out--button" onClick={() => props.onClick()} type="button">AÑADIR</button></td>
+        <td className="my-team__table-row-out"><button className="my-team__table-row-out--button" onClick={() => { includePlayer(props.player._id) }} type="button">AÑADIR</button></td>
       </tr>
     </div>
   );
