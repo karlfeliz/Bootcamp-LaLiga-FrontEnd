@@ -2,7 +2,7 @@ import "./FreePlayersAdmin.scss";
 import FreePlayersAdminRow from "./FreePlayersAdminRow/FreePlayersAdminRow";
 
 const FreePlayersAdmin = (props: any): JSX.Element => {
-  console.log("data", props.data[0].data.freeUsers);
+//   console.log("data", props.data[0].data.freeUsers);
   return (
     <div className="free-players__team">
       <h3 className="free-players__content-title">SIN EQUIPO</h3>
@@ -18,7 +18,7 @@ const FreePlayersAdmin = (props: any): JSX.Element => {
               <th className="free-players__table-head-out">AÑADIR AL EQUIPO</th>
             </tr>
           </div>
-          {props.data[0].data.freeUsers.map((player: any) => {
+          {props.data[0]?.data?.freeUsers.map((player: any) => {
             return <FreePlayersAdminRow key={player} player={player}></FreePlayersAdminRow>
           })}
         </table>
