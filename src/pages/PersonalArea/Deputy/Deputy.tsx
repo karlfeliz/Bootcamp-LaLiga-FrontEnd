@@ -18,17 +18,21 @@ const DeputyPage = (): JSX.Element => {
   console.log(authInfo.userToken);
   const [matches] = useFetch(API_URL_MATCH, "GET", authInfo.userToken as string);
   const [players] = useFetch(API_URL_USER, "GET", authInfo.userToken as string);
+  const player = useFetch(`${API_URL_USER}/${authInfo.userInfo?._id as string}`, "GET", authInfo.userToken as string);
+
   // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
   const club = useFetch(`${API_URL_CLUB}/${authInfo?.userInfo?.team}`, "GET", authInfo.userToken as string);
   console.log("user info", authInfo?.userInfo?.team);
   console.log("user token", authInfo.userToken);
   console.log("user club", club);
+  console.log("user player", player);
+
   return (
     <div className="deputy-page">
       <Header />
       <div className="deputy-page__layout">
         <div className="deputy-page__profile-info">
-          <ProfileInfo />
+          <ProfileInfo player={player} />
           <ClubInfo club={club} />
         </div>
         <div className="deputy-page__content">

@@ -1,10 +1,15 @@
 import "./User.scss";
-import Avatar_user1 from "../../../../assets/Avatar_user1.jpg";
 import useFetch from "../../../../hooks/useFetch";
+import UserRow from "./UserRow/UserRow";
+import { useContext } from "react";
+import { AuthContext } from "../../../../App";
 
-const AdminUserPage = (): JSX.Element => {
-  const prueba = useFetch(`${process.env.REACT_APP_API_URL as string}/user`, "GET");
-  console.log(prueba);
+const API_URL = `${process.env.REACT_APP_API_URL as string}/user`;
+
+const User = (props: any): JSX.Element => {
+  const authInfo = useContext(AuthContext);
+  const data: any = useFetch(API_URL, "GET", authInfo.userToken as string);
+  console.log(data[0]?.data?.usersWithTeam);
 
   return (
     <div className="admin-user">
@@ -18,24 +23,12 @@ const AdminUserPage = (): JSX.Element => {
             <th className="admin-user__table-head">ROL</th>
           </tr>
         </div>
-        <div className="admin-user__row-block">
-          <tr className="admin-user__row-block-tr">
-            <td className="admin-user__table-row-photo">
-              <img className="admin-user__table-row-photo-img" src={Avatar_user1} />
-            </td>
-            <td className="admin-user__table-row">Borja</td>
-            <td className="admin-user__table-row">Mariano Diaz</td>
-            <td className="admin-user__table-row">bmdiaz@gmail.com</td>
-            <td className="admin-user__table-row">Usuario</td>
-            <td className="admin-user__table-row">
-              <button className="admin-user__table-row-out--button-edit">EDITAR</button>
-              <button className="admin-user__table-row-out--button-delete">ELIMINAR</button>
-            </td>
-          </tr>
-        </div>
+        {data[0]?.data?.usersWithTeam?.map((user: any) => {
+          return <UserRow key={data?.userWithTeam?._id} user={user}></UserRow>
+        })}
       </table>
     </div>
   );
 };
 
-export default AdminUserPage;
+export default User;
