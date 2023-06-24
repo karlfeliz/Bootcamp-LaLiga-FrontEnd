@@ -25,7 +25,7 @@ const DeputyPage = (): JSX.Element => {
   console.log("user info", authInfo?.userInfo?.team);
   console.log("user token", authInfo.userToken);
   console.log("user club", club);
-  console.log("user player", player);
+  console.log("user player", player[0]);
 
   return (
     <div className="deputy-page">

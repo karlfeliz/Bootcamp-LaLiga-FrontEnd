@@ -3,6 +3,7 @@ import useFetch from "../../../../hooks/useFetch";
 import UserRow from "./UserRow/UserRow";
 import { useContext } from "react";
 import { AuthContext } from "../../../../App";
+import FreePlayersAdmin from "./FreePlayersAdmin/FreePlayersAdmin";
 
 const API_URL = `${process.env.REACT_APP_API_URL as string}/user`;
 
@@ -27,6 +28,7 @@ const User = (props: any): JSX.Element => {
           return <UserRow key={data?.userWithTeam?._id} user={user}></UserRow>
         })}
       </table>
+      <FreePlayersAdmin data={data}></FreePlayersAdmin>
     </div>
   );
 };
